@@ -1,18 +1,8 @@
-# bootstrap-datepicker
+# foundation-datepicker-sass
 
-This is a fork of Stefan Petre's [original code](http://www.eyecon.ro/bootstrap-datepicker/);
-thanks go to him for getting this thing started!
-
-Please note that this fork is not used on Stefan's page, nor is it maintained or contributed to by him.
+This is a fork of [eternicode's bootstrap datepicker](https://github.com/eternicode/bootstrap-datepicker), ported to Foundation.  The .less files converted to .scss and any required bootstrap variables shimmed into the .scss
 
 Versions are incremented according to [semver](http://semver.org/).
-
-## Links
-
-* [Online Demo](http://eternicode.github.io/bootstrap-datepicker/)
-* [Online Docs](http://bootstrap-datepicker.readthedocs.org/) (ReadTheDocs.com)
-* [Google Group](https://groups.google.com/group/bootstrap-datepicker/)
-* [Travis CI ![Build Status](https://travis-ci.org/eternicode/bootstrap-datepicker.png?branch=master)](https://travis-ci.org/eternicode/bootstrap-datepicker)
 
 ## Development
 
