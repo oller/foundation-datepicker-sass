@@ -1,6 +1,6 @@
 {
   "name": "foundation-datepicker-sass",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": ["foundation", "zurb", "datepicker", "date", "picker", "sass", "standalone"]
   "main": ["js/bootstrap-datepicker.js", "css/datepicker.css"],
   "dependencies": {
