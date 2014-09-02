@@ -1,9 +1,9 @@
 {
-  "name": "bootstrap-datepicker",
-  "version": "dev",
-  "main": ["js/bootstrap-datepicker.js", "css/datepicker.css", "css/datepicker3.css"],
+  "name": "foundation-datepicker-sass",
+  "version": "0.0.1",
+  "keywords": ["foundation", "zurb", "datepicker", "date", "picker", "sass", "standalone"]
+  "main": ["js/bootstrap-datepicker.js", "css/datepicker.css"],
   "dependencies": {
-    "jquery" : ">=1.7.1",
-    "bootstrap" : ">=3.0 <4.0"
+    "jquery" : ">=1.7.1"
   }
 }

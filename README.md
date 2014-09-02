@@ -1,18 +1,10 @@
-# bootstrap-datepicker
+# foundation-datepicker-sass
 
-This is a fork of Stefan Petre's [original code](http://www.eyecon.ro/bootstrap-datepicker/);
-thanks go to him for getting this thing started!
+Forked version of Eternicode's [original code](https://github.com/eternicode/bootstrap-datepicker) to support Zurb Foundation 5, or as a standalone datepicker.
 
-Please note that this fork is not used on Stefan's page, nor is it maintained or contributed to by him.
+Taking some time to manually remove all the bootstrap dependencies, and any other bloat, I intend to keep the JS files up to date with the master branch.
 
 Versions are incremented according to [semver](http://semver.org/).
-
-## Links
-
-* [Online Demo](http://eternicode.github.io/bootstrap-datepicker/)
-* [Online Docs](http://bootstrap-datepicker.readthedocs.org/) (ReadTheDocs.com)
-* [Google Group](https://groups.google.com/group/bootstrap-datepicker/)
-* [Travis CI ![Build Status](https://travis-ci.org/eternicode/bootstrap-datepicker.png?branch=master)](https://travis-ci.org/eternicode/bootstrap-datepicker)
 
 ## Development
 

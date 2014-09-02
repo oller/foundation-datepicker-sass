@@ -25,23 +25,15 @@ module.exports = function(grunt){
             main: ['js/bootstrap-datepicker.js'],
             locales: ['js/locales/*js']
         },
-        less: {
+        sass: {
             standalone: {
                 files: {
-                    '_build/datepicker.standalone.css': 'build/build_standalone.less',
-                    '_build/datepicker3.standalone.css': 'build/build_standalone3.less'
-                }
-            },
-            css: {
-                files: {
-                    '_build/datepicker.css': 'build/build.less',
-                    '_build/datepicker3.css': 'build/build3.less'
+                    '_build/datepicker.standalone.css': 'scss/datepicker.scss'
                 }
             },
             repo: {
                 files: {
-                    'css/datepicker.css': 'build/build_standalone.less',
-                    'css/datepicker3.css': 'build/build_standalone3.less'
+                    'css/datepicker.css': 'scss/datepicker.scss'
                 }
             }
         },
@@ -76,10 +68,7 @@ module.exports = function(grunt){
         cssmin: {
             all: {
                 files: {
-                    '_build/datepicker.standalone.min.css': '_build/datepicker.standalone.css',
-                    '_build/datepicker.min.css': '_build/datepicker.css',
-                    '_build/datepicker3.standalone.min.css': '_build/datepicker3.standalone.css',
-                    '_build/datepicker3.min.css': '_build/datepicker3.css'
+                    '_build/datepicker.standalone.min.css': '_build/datepicker.standalone.css'
                 }
             }
         },
@@ -87,9 +76,9 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('lint', 'Lint all js files with jshint and jscs', ['jshint', 'jscs']);
-    grunt.registerTask('test', 'Lint files and run unit tests', ['lint', 'qunit']);
-    grunt.registerTask('finish', 'Prepares repo for commit [test, less:repo, screenshots]', ['test', 'less:repo', 'screenshots']);
-    grunt.registerTask('dist', 'Builds minified files', ['less:css', 'less:standalone', 'cssmin', 'uglify']);
+    // grunt.registerTask('test', 'Lint files and run unit tests', ['lint', 'qunit']);
+    grunt.registerTask('finish', 'Prepares repo for commit [lint, sass:repo, screenshots]', ['lint', 'sass:repo', 'screenshots']);
+    grunt.registerTask('dist', 'Builds minified files', ['clean', 'sass:repo', 'sass:standalone', 'cssmin', 'uglify']);
 
     grunt.registerTask('screenshots', 'Rebuilds automated docs screenshots', function(){
         var phantomjs = require('phantomjs').path;
