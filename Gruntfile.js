@@ -28,12 +28,12 @@ module.exports = function(grunt){
         sass: {
             standalone: {
                 files: {
-                    '_build/datepicker.standalone.css': 'scss/datepicker.scss'
+                    '_build/datepicker.standalone.css': 'scss/settings.scss'
                 }
             },
             repo: {
                 files: {
-                    'css/datepicker.css': 'scss/datepicker.scss'
+                    'css/datepicker.css': 'scss/settings.scss'
                 }
             }
         },
