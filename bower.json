@@ -1,9 +1,33 @@
 {
   "name": "foundation-datepicker-sass",
   "version": "0.1.0",
-  "keywords": ["foundation", "zurb", "datepicker", "date", "picker", "sass", "standalone"]
-  "main": ["js/bootstrap-datepicker.js", "css/datepicker.css"],
+  "keywords": [
+    "foundation",
+    "zurb",
+    "datepicker",
+    "date",
+    "picker",
+    "sass",
+    "standalone"
+  ],
+  "main": [
+    "js/bootstrap-datepicker.js",
+    "css/datepicker.css"
+  ],
   "dependencies": {
-    "jquery" : ">=1.7.1"
-  }
+    "jquery": ">=1.7.1"
+  },
+  "homepage": "https://github.com/oller/foundation-datepicker-sass",
+  "authors": [
+    "David Ollerhead <david@davidollerhead.com>"
+  ],
+  "description": "A fork of the bootstrap-datepicker, converted to scss and optimised for integration with zurb foundation",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
