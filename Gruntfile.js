@@ -26,11 +26,6 @@ module.exports = function(grunt){
             locales: ['js/locales/*js']
         },
         sass: {
-            standalone: {
-                files: {
-                    '_build/datepicker.standalone.css': 'scss/settings.scss'
-                }
-            },
             repo: {
                 files: {
                     'css/datepicker.css': 'scss/settings.scss'
@@ -45,30 +40,30 @@ module.exports = function(grunt){
             main: {
                 options: {
                     sourceMap: function(dest){
-                        return dest.replace('.min.js', '.js.map');
+                        return dest.replace('.min.js', '.min.js.map');
                     }
                 },
                 files: {
-                    '_build/bootstrap-datepicker.min.js': 'js/bootstrap-datepicker.js',
-                    '_build/bootstrap-datepicker.locales.min.js': 'js/locales/*.js'
+                    'js/bootstrap-datepicker.min.js': 'js/bootstrap-datepicker.js',
+                    'js/bootstrap-datepicker.locales.min.js': 'js/locales/*.js'
                 }
-            },
-            locales: {
-                files: [{
-                    expand: true,
-                    cwd: 'js/locales/',
-                    src: ['*.js', '!*.min.js'],
-                    dest: '_build/locales/',
-                    rename: function(dest, name){
-                        return dest + name.replace(/\.js$/, '.min.js');
-                    }
-                }]
             }
+            // locales: {
+            //     files: [{
+            //         expand: true,
+            //         cwd: 'js/locales/',
+            //         src: ['*.js', '!*.min.js'],
+            //         dest: '_build/locales/',
+            //         rename: function(dest, name){
+            //             return dest + name.replace(/\.js$/, '.min.js');
+            //         }
+            //     }]
+            // }
         },
         cssmin: {
             all: {
                 files: {
-                    '_build/datepicker.standalone.min.css': '_build/datepicker.standalone.css'
+                    'css/datepicker.min.css': 'css/datepicker.css'
                 }
             }
         },
@@ -77,8 +72,8 @@ module.exports = function(grunt){
 
     grunt.registerTask('lint', 'Lint all js files with jshint and jscs', ['jshint', 'jscs']);
     // grunt.registerTask('test', 'Lint files and run unit tests', ['lint', 'qunit']);
-    grunt.registerTask('finish', 'Prepares repo for commit [lint, sass:repo, screenshots]', ['lint', 'sass:repo', 'screenshots']);
-    grunt.registerTask('dist', 'Builds minified files', ['clean', 'sass:repo', 'sass:standalone', 'cssmin', 'uglify']);
+    grunt.registerTask('finish', 'Prepares repo for commit [lint, sass:repo, screenshots, cssmin, uglify]', ['lint', 'sass:repo', 'screenshots', 'cssmin', 'uglify']);
+    // grunt.registerTask('dist', 'Builds minified files', ['clean', 'sass:repo', 'sass:standalone', 'cssmin', 'uglify']);
 
     grunt.registerTask('screenshots', 'Rebuilds automated docs screenshots', function(){
         var phantomjs = require('phantomjs').path;

@@ -8,16 +8,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
-/*!
- * Datepicker for Foundation
- *
- * Converted to Foundation / SCSS by David Ollerhead
- * Copyright 2012 Stefan Petre
- * Improvements by Andrew Rowls
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- */
 .datepicker {
   direction: ltr;
   /*.dow {
