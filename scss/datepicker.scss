@@ -30,6 +30,7 @@
 
 // The dropdown menu (<ul>)
 //=========================================
+
 .datepicker {
     padding: 4px;
     @include border-radius(4px);
@@ -61,67 +62,7 @@
             padding: 0 5px;
         }
     }
-    .datepicker-inline {
-        width: 220px;
-    }
     direction: ltr;
-    .datepicker-rtl {
-        direction: rtl;
-        table tr td span {
-            float: right;
-        }
-    }
-    .datepicker-dropdown {
-        top: 0;
-        left: 0;
-        &:before {
-            content:'';
-            display: inline-block;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 7px solid $grayLighter;
-            border-top: 0;
-            border-bottom-color: rgba(0, 0, 0, .2);
-            position: absolute;
-        }
-        &:after {
-            content:'';
-            display: inline-block;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 6px solid $white;
-            border-top: 0;
-            position: absolute;
-        }
-        &.datepicker-orient-left:before {
-            left: 6px;
-        }
-        &.datepicker-orient-left:after {
-            left: 7px;
-        }
-        &.datepicker-orient-right:before {
-            right: 6px;
-        }
-        &.datepicker-orient-right:after {
-            right: 7px;
-        }
-        &.datepicker-orient-top:before {
-            top: -7px;
-        }
-        &.datepicker-orient-top:after {
-            top: -6px;
-        }
-        &.datepicker-orient-bottom:before {
-            bottom: -7px;
-            border-bottom: 0;
-            border-top: 7px solid #999;
-        }
-        &.datepicker-orient-bottom:after {
-            bottom: -6px;
-            border-bottom: 0;
-            border-top: 6px solid $white;
-        }
-    }
     >div {
         display: none;
     }
@@ -143,11 +84,12 @@
         -ms-user-select: none;
         user-select: none;
     }
-    td, th {
+    td,
+    th {
+        @include border-radius(4px);
         text-align: center;
         width: 20px;
         height: 20px;
-        @include border-radius(4px);
         border: none;
     }
     // Inline display inside a table presents some problems with
@@ -193,17 +135,17 @@
         &.range:hover,
         &.range.disabled,
         &.range.disabled:hover {
-            background:$grayLighter;
             @include border-radius(0);
+            background: $grayLighter;
         }
 
         &.range.today,
         &.range.today:hover,
         &.range.today.disabled,
         &.range.today.disabled:hover {
+            @include border-radius(0);
             $todayBackground: mix($primary, $grayLighter, 50%);
             background-color: $todayBackground;
-            @include border-radius(0);
         }
 
         &.selected,
@@ -225,6 +167,7 @@
         }
 
         span {
+            @include border-radius(4px);
             display: block;
             width: 23%;
             height: 54px;
@@ -232,7 +175,7 @@
             float: left;
             margin: 1%;
             cursor: pointer;
-            @include border-radius(4px);
+
             &:hover {
                 background: $grayLighter;
             }
@@ -286,5 +229,67 @@
     thead tr:first-child th.cw {
         cursor: default;
         background-color: transparent;
+    }
+}
+
+.datepicker-inline {
+    width: 220px;
+}
+
+.datepicker-rtl {
+    direction: rtl;
+    table tr td span {
+        float: right;
+    }
+}
+.datepicker-dropdown {
+    top: 0;
+    left: 0;
+    &:before {
+        content:'';
+        display: inline-block;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid $grayLighter;
+        border-top: 0;
+        border-bottom-color: rgba(0, 0, 0, .2);
+        position: absolute;
+    }
+    &:after {
+        content:'';
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid $white;
+        border-top: 0;
+        position: absolute;
+    }
+    &.datepicker-orient-left:before {
+        left: 6px;
+    }
+    &.datepicker-orient-left:after {
+        left: 7px;
+    }
+    &.datepicker-orient-right:before {
+        right: 6px;
+    }
+    &.datepicker-orient-right:after {
+        right: 7px;
+    }
+    &.datepicker-orient-top:before {
+        top: -7px;
+    }
+    &.datepicker-orient-top:after {
+        top: -6px;
+    }
+    &.datepicker-orient-bottom:before {
+        bottom: -7px;
+        border-bottom: 0;
+        border-top: 7px solid #999;
+    }
+    &.datepicker-orient-bottom:after {
+        bottom: -6px;
+        border-bottom: 0;
+        border-top: 6px solid $white;
     }
 }
