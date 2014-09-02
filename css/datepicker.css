@@ -1,9 +1,9 @@
 /*!
  * Datepicker for Foundation
  *
+ * Converted to Foundation / SCSS by David Ollerhead
  * Copyright 2012 Stefan Petre
  * Improvements by Andrew Rowls
- * Converted to SCSS by David Ollerhead
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -11,9 +11,9 @@
 /*!
  * Datepicker for Foundation
  *
+ * Converted to Foundation / SCSS by David Ollerhead
  * Copyright 2012 Stefan Petre
  * Improvements by Andrew Rowls
- * Converted to SCSS by David Ollerhead
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -70,7 +70,7 @@
     line-height: 2;
     font-size: 13px; }
   .datepicker table tr td.day:hover, .datepicker table tr td.day.focused {
-    background: #ccc;
+    background: #eee;
     cursor: pointer; }
   .datepicker table tr td.old, .datepicker table tr td.new {
     color: #999; }
@@ -119,7 +119,7 @@
     cursor: pointer; }
     .datepicker thead tr:first-child th:hover,
     .datepicker tfoot tr th:hover {
-      background: #ccc; }
+      background: #eee; }
   .datepicker .cw {
     font-size: 10px;
     width: 12px;
