@@ -9,9 +9,6 @@
  *
  */
 
-// Datepicker standalone .scss buildfile.  Includes all necessary mixins/variables/rules from bootstrap
-// and imports the included datepicker.scss to output a minimal standalone datepicker.css
-
 // There's a lot more to do here, to factor out the scss vars and potentially reference them again existing foundation vars
 
 // Mixins
@@ -31,78 +28,6 @@
           border-radius: $radius;
 }
 
-// Gradients
-@mixin vertical($startColor: #555, $endColor: #333) {
-  background-color: mix($startColor, $endColor);
-  background-image: -moz-linear-gradient(top, $startColor, $endColor); // FF 3.6+
-  background-image: -ms-linear-gradient(top, $startColor, $endColor); // IE10
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
-  background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
-  background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient(top, $startColor, $endColor); // The standard
-  background-repeat: repeat-x;
-  // filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$startColor,$endColor)); // IE9 and down
-}
-
-// Gradient Bar Colors for buttons and alerts
-@mixin gradientBar($primaryColor, $secondaryColor) {
-  @include vertical($primaryColor, $secondaryColor);
-  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
-}
-
-// Button backgrounds
-@mixin buttonBackground($startColor, $endColor) {
-  @include gradientBar($startColor, $endColor);
-  @include reset-filter();
-  &:hover, &:active, &.active, &.disabled, &[disabled] {
-    background-color: $endColor;
-  }
-  &:active,
-  &.active {
-    background-color: darken($endColor, 10%) e("\9");
-  }
-}
-
-// Reset filters for IE
-@mixin reset-filter() {
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-
-// Button variants
-@mixin button-variant($color, $background, $border) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &.active,
-  .open .dropdown-toggle & {
-    color: $color;
-    background-color: darken($background, 8%);
-        border-color: darken($border, 12%);
-  }
-  &:active,
-  &.active,
-  .open .dropdown-toggle & {
-    background-image: none;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $background;
-      border-color: $border;
-    }
-  }
-}
-
 
 // The dropdown menu (<ul>)
 // =========================================
@@ -120,7 +45,7 @@
         display: none; // none by default, but block on "open" of the menu
         min-width: 160px;
         list-style: none;
-        background-color: $dropdown-bg;
+        background-color: $white;
         border: 1px solid $grayLighter;
         border: 1px solid rgba(0,0,0,.2);
         border-radius: 5px;
@@ -246,7 +171,7 @@
         &.today.disabled,
         &.today.disabled:hover {
             $todayBackground: lighten($primary, 30%);
-            @include buttonBackground($todayBackground, adjust-hue($todayBackground, 20));
+            background-color: $todayBackground;
             color: #000;
         }
         &.today:hover:hover { // Thank bootstrap 2.0 for this selector...
@@ -268,14 +193,14 @@
         &.range.today.disabled,
         &.range.today.disabled:hover {
             $todayBackground: mix($primary, $grayLighter, 50%);
-            @include buttonBackground($todayBackground, adjust-hue($todayBackground, 20));
+            background-color: $todayBackground;
             @include border-radius(0);
         }
         &.selected,
         &.selected:hover,
         &.selected.disabled,
         &.selected.disabled:hover {
-            @include buttonBackground(lighten($grayLight, 10), darken($grayLight, 10));
+            background-color: lighten($grayLight, 10);
             color: $white;
             text-shadow: 0 -1px 0 rgba(0,0,0,.25);
         }
@@ -283,7 +208,7 @@
         &.active:hover,
         &.active.disabled,
         &.active.disabled:hover {
-            @include buttonBackground($btnPrimaryBackground, adjust-hue($btnPrimaryBackground, 20));
+            background-color: $primary;
             color: $white;
             text-shadow: 0 -1px 0 rgba(0,0,0,.25);
         }
@@ -309,7 +234,7 @@
             &.active:hover,
             &.active.disabled,
             &.active.disabled:hover {
-                @include buttonBackground($btnPrimaryBackground, adjust-hue($btnPrimaryBackground, 20));
+                background-color: $primary;
                 color: $white;
                 text-shadow: 0 -1px 0 rgba(0,0,0,.25);
             }
@@ -345,42 +270,5 @@
     thead tr:first-child th.cw {
         cursor: default;
         background-color: transparent;
-    }
-}
-.input-append,
-.input-prepend {
-    &.date {
-        .add-on i {
-            cursor: pointer;
-            width: 16px;
-            height: 16px;
-        }
-    }
-}
-.input-daterange {
-    input {
-        text-align:center;
-    }
-    input:first-child {
-        @include border-radius(3px 0 0 3px);
-    }
-    input:last-child {
-        @include border-radius(0 3px 3px 0);
-    }
-    .add-on {
-        display: inline-block;
-        width: auto;
-        min-width: 16px;
-        height: $baseLineHeight;
-        padding: 4px 5px;
-        font-weight: normal;
-        line-height: $baseLineHeight;
-        text-align: center;
-        text-shadow: 0 1px 0 $white;
-        vertical-align: middle;
-        background-color: $grayLighter;
-        border: 1px solid $grayLighter;
-        margin-left:-5px;
-        margin-right:-5px;
     }
 }

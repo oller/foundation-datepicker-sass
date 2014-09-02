@@ -1,3 +1,14 @@
+/*!
+ * Datepicker for Foundation
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Converted to SCSS by David Ollerhead
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
 // Variables
 // =========================================
 
@@ -8,12 +19,10 @@ $grayLight:             #999;
 $grayLighter:           #ccc;
 $grayLightest:          #eee;
 $white:                 #fff;
-$btnPrimaryBackground:  #f00;
 $primary:               #f89406;
-$dropdown-bg:           $white;
 
 // Type
-$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family:           Arial, "Helvetica Neue", Helvetica, sans-serif;
 $baseLineHeight:        18px;
 $line-height-base:      1.428571429; // 20/14
 $zindex-dropdown:       1000;
