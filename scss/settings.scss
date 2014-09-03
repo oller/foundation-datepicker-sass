@@ -13,17 +13,24 @@
 // =========================================
 
 // Colours
-$grayDark:              #333;
-$gray:                  #555;
-$grayLight:             #999;
-$grayLighter:           #ccc;
-$grayLightest:          #eee;
-$black:                 #000;
-$white:                 #fff;
-$primary:               #f89406;
+$color-background:          #fff;
+$color-font:                #333;
+$color-day-hover-bg:        #eee;
+$color-day-selected:        #fff;
+$color-day-selected-bg:     #f89406;
+$color-day-today-bg:        lighten($color-day-selected-bg, 30%);
+
+// Ranges
+$color-day-range-bg:            #ccc;
+$color-day-range-selector-bg:   lighten($color-day-range-bg, 10);
+$color-day-range-today-bg:      mix($color-day-selected-bg, $color-day-range-bg, 50%);
+
+// Disabled, Prev Next Month's Dates
+$color-day-disabled:        #999;
 
 // Type
 $font-family:           Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-size:             13px;
 $line-height-base:      2;
 $zindex-dropdown:       1000;
 

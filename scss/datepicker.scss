@@ -4,11 +4,11 @@
 //=========================================
 
 // Border Radius
-@mixin border-radius($radius: 5px) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    border-radius: $radius;
-}
+// @mixin border-radius($radius: 5px) {
+//     -webkit-border-radius: $radius;
+//     -moz-border-radius: $radius;
+//     border-radius: $radius;
+// }
 
 // The dropdown menu (<ul>)
 //=========================================
@@ -24,13 +24,13 @@
         float: left;
         display: none; // none by default, but block on"open" of the menu min-width: 160px;
         list-style: none;
-        background-color: $white;
+        background-color: $color-background;
         -webkit-background-clip: padding-box;
         -moz-background-clip: padding;
         background-clip: padding-box;
         *border-right-width: 2px;
         *border-bottom-width: 2px;
-        color: $grayDark;
+        color: $color-font;
         font-family: $font-family;
     }
     &.dropdown-menu, &.datepicker-inline {
@@ -52,7 +52,7 @@
         display: block;
     }
     table {
-        background-color: $white;
+        background-color: $color-background;
         border: 0;
         margin: 0;
         -webkit-touch-callout: none;
@@ -62,7 +62,7 @@
         -ms-user-select: none;
         user-select: none;
         thead {
-          background-color: $white;
+          background-color: $color-background;
         }
     }
     td,
@@ -72,42 +72,41 @@
         width: 32px;
         border: none;
         line-height: $line-height-base;
-        font-size: 13px;
+        font-size: $font-size;
     }
     table tr td {
         &.day:hover,
         &.day.focused {
-            background: $grayLightest;
+            background: $color-day-hover-bg;
             cursor: pointer;
         }
         &.old,
         &.new {
-            color: $grayLight;
+            color: $color-day-disabled
         }
         &.disabled,
         &.disabled:hover {
             background: none;
-            color: $grayLight;
+            color: $color-day-disabled;
             cursor: default;
         }
         &.today,
         &.today:hover,
         &.today.disabled,
         &.today.disabled:hover {
-            $todayBackground: lighten($primary, 30%);
-            background-color: $todayBackground;
-            color: $black;
+            background-color: $color-day-today-bg;
+            color: $color-font;
         }
 
         &.today.active:hover {
-            color: $white;
+            color: $color-day-selected;
         }
         &.range,
         &.range:hover,
         &.range.disabled,
         &.range.disabled:hover {
             // @include border-radius(0);
-            background: $grayLighter;
+            background: $color-day-range-selector-bg;
         }
 
         &.range.today,
@@ -115,24 +114,22 @@
         &.range.today.disabled,
         &.range.today.disabled:hover {
             // @include border-radius(0);
-            $todayBackground: mix($primary, $grayLighter, 50%);
-            background-color: $todayBackground;
+            background-color: $color-day-range-today-bg;
         }
 
         &.selected,
         &.selected:hover,
         &.selected.disabled,
         &.selected.disabled:hover {
-            background-color: lighten($grayLight, 10);
-            color: $white;
+            background-color: $color-day-range-bg;
         }
 
         &.active,
         &.active:hover,
         &.active.disabled,
         &.active.disabled:hover {
-            background-color: $primary;
-            color: $white;
+            background-color: $color-day-selected-bg;
+            color: $color-day-selected;
         }
 
         span {
@@ -146,13 +143,13 @@
             cursor: pointer;
 
             &:hover {
-                background: $grayLighter;
+                background: $color-day-range-selector-bg;
             }
 
             &.disabled,
             &.disabled:hover {
                 background:none;
-                color: $grayLight;
+                color: $color-day-disabled;
                 cursor: default;
             }
 
@@ -160,12 +157,12 @@
             &.active:hover,
             &.active.disabled,
             &.active.disabled:hover {
-                background-color: $primary;
-                color: $white;
+                background-color: $color-day-selected-bg;
+                color: $color-day-selected;
             }
 
             &.old, &.new {
-                color: $grayLight;
+                color: $color-day-disabled;
             }
         }
     }
@@ -179,7 +176,7 @@
         cursor: pointer;
 
         &:hover {
-            background: $grayLightest;
+            background: $color-day-hover-bg;
         }
     }
     /*.dow {

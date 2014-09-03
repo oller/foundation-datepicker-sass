@@ -73,7 +73,6 @@ module.exports = function(grunt){
     grunt.registerTask('lint', 'Lint all js files with jshint and jscs', ['jshint', 'jscs']);
     // grunt.registerTask('test', 'Lint files and run unit tests', ['lint', 'qunit']);
     grunt.registerTask('finish', 'Prepares repo for commit [lint, sass:repo, screenshots, cssmin, uglify]', ['lint', 'sass:repo', 'screenshots', 'cssmin', 'uglify']);
-    // grunt.registerTask('dist', 'Builds minified files', ['clean', 'sass:repo', 'sass:standalone', 'cssmin', 'uglify']);
 
     grunt.registerTask('screenshots', 'Rebuilds automated docs screenshots', function(){
         var phantomjs = require('phantomjs').path;

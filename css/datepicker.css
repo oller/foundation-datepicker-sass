@@ -70,16 +70,15 @@
     cursor: default; }
   .datepicker table tr td.today, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover {
     background-color: #fdd49a;
-    color: #000; }
+    color: #333; }
   .datepicker table tr td.today.active:hover {
     color: #fff; }
   .datepicker table tr td.range, .datepicker table tr td.range:hover, .datepicker table tr td.range.disabled, .datepicker table tr td.range.disabled:hover {
-    background: #ccc; }
+    background: #e6e6e6; }
   .datepicker table tr td.range.today, .datepicker table tr td.range.today:hover, .datepicker table tr td.range.today.disabled, .datepicker table tr td.range.today.disabled:hover {
     background-color: #e2b069; }
   .datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.disabled, .datepicker table tr td.selected.disabled:hover {
-    background-color: #b3b3b3;
-    color: #fff; }
+    background-color: #ccc; }
   .datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
     background-color: #f89406;
     color: #fff; }
@@ -92,7 +91,7 @@
     margin: 1%;
     cursor: pointer; }
     .datepicker table tr td span:hover {
-      background: #ccc; }
+      background: #e6e6e6; }
     .datepicker table tr td span.disabled, .datepicker table tr td span.disabled:hover {
       background: none;
       color: #999;
